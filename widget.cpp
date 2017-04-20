@@ -5,7 +5,8 @@
 #include <QVideoWidget>
 #include <QGraphicsView>
 #include <QGraphicsVideoItem>
-
+#include <QGraphicsScene>
+#include <QResizeEvent>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -13,13 +14,15 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     player = new QMediaPlayer(this);
-    vid = new QGraphicsVideoItem();
+    vid = new QGraphicsVideoItem();   
     //vid->setAspectRatioMode(Qt::IgnoreAspectRatio);
     player->setVideoOutput(vid);
-    ui->graphicsView->setScene(new QGraphicsScene());
+    escena = new QGraphicsScene(this);
+    escena->setSceneRect(0,0,0,0);
+    ui->graphicsView->setScene(escena);
     ui->graphicsView->scene()->addItem(vid);
     vid->setAspectRatioMode(Qt::IgnoreAspectRatio);
-    vid->setSize(QSizeF(796,478));
+    vid->setSize(QSizeF(1200,600));
 
     vid->show();
 

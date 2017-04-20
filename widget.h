@@ -11,6 +11,7 @@ class QMediaPlayer;
 class QVideoWidget;
 class QGraphicsView;
 class QGraphicsVideoItem;
+class QGraphicsScene;
 
 class Widget : public QWidget
 {
@@ -34,6 +35,7 @@ private:
     QVideoWidget *video;
     QGraphicsView *video2;
     QGraphicsVideoItem *vid;
+    QGraphicsScene *escena;
 };
 
 #endif // WIDGET_H
