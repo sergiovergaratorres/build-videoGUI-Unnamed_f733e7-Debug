@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1122</width>
-    <height>777</height>
+    <width>1298</width>
+    <height>747</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>30</y>
-     <width>1211</width>
+     <width>1231</width>
      <height>641</height>
     </rect>
    </property>
@@ -173,6 +173,19 @@ border-image: url(:unmute.png);
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="timeStamp">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>700</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>00:00:00</string>
    </property>
   </widget>
  </widget>

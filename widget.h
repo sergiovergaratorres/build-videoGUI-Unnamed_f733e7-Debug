@@ -2,6 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QTime>
+#include <QElapsedTimer>
 
 namespace Ui {
 class Widget;
@@ -12,6 +14,7 @@ class QVideoWidget;
 class QGraphicsView;
 class QGraphicsVideoItem;
 class QGraphicsScene;
+
 
 class Widget : public QWidget
 {
@@ -28,6 +31,7 @@ private slots:
     void on_stop_clicked();
     void on_mute_clicked();
     void on_volumen_valueChanged(int value);
+    void timerEvent(QTimerEvent *ev);
 
 private:
     Ui::Widget *ui;
@@ -36,6 +40,9 @@ private:
     QGraphicsView *video2;
     QGraphicsVideoItem *vid;
     QGraphicsScene *escena;
+    int m_timerId;
+    qint64 m_accumulator;
+    QElapsedTimer m_timer;
 };
 
 #endif // WIDGET_H
